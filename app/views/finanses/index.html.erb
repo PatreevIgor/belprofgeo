@@ -1,0 +1,35 @@
+<meta charset="utf-8"> 
+<h1>Список расходов:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Сумма</th>
+      <th>Расходы</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finanses.each do |finanse| %>
+      <tr>
+        <td><%= finanse.summa %></td>
+        <td><%= finanse.description %></td>
+        <% if current_user %>
+          <% if current_user.email =='igormanxxx@yandex.ru' %>
+            <td><%= link_to 'Show', finanse %></td>
+            <td><%= link_to 'Edit', edit_finanse_path(finanse) %></td>
+            <td><%= link_to 'Destroy', finanse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% end %>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+        <% if current_user %>
+          <% if current_user.email =='igormanxxx@yandex.ru' %>
+            <%= link_to 'New Finanse', new_finanse_path %>
+         <% end %>
+        <% end %>

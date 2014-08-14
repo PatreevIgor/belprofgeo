@@ -1,0 +1,38 @@
+<meta charset="utf-8"> 
+<h1>Список протоколов:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Номер</th>
+      <th>Описание</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @protokols.each do |protokol| %>
+      <tr>
+        <td><%= protokol.number %></td>
+        <td><%= protokol.description %></td>
+
+      </tr>
+
+        <% if current_user %>
+            <% if current_user.email =='igormanxxx@yandex.ru' or 'esc1951@mail.ru' %>
+                <td><%= link_to 'Просмотр', protokol %></td>
+                <td><%= link_to 'Редактирование', edit_protokol_path(protokol) %></td>
+                <td><%= link_to 'Удалить', protokol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+        <% end %>
+
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if current_user %>
+    <% if current_user.email =='igormanxxx@yandex.ru' or 'esc1951@mail.ru' %>
+<%= link_to 'Создать протокол', new_protokol_path %>
+            <% end %>
+        <% end %>

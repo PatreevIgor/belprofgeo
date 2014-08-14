@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @usersprof.name %>
+</p>
+
+<p>
+  <strong>Telefon:</strong>
+  <%= @usersprof.telefon %>
+</p>
+
+<p>
+  <strong>Kartschet:</strong>
+  <%= @usersprof.kartschet %>
+</p>
+
+<%= link_to 'Edit', edit_usersprof_path(@usersprof) %> |
+<%= link_to 'Back', usersprofs_path %>

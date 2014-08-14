@@ -1,0 +1,15 @@
+<meta charset="utf-8"> 
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Номер:</strong>
+  <%= @protokol.number %>
+</p>
+
+<p>
+  <strong>Описание:</strong>
+  <%= @protokol.description %>
+</p>
+
+<%= link_to 'Редактировать', edit_protokol_path(@protokol) %> |
+<%= link_to 'Назад', protokols_path %>

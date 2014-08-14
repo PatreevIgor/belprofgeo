@@ -1,0 +1,28 @@
+<meta charset="utf-8"> 
+<h1>Предложения:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ФИО</th>
+      <th>Предложение</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suggestions.each do |suggestion| %>
+      <tr>
+        <td><%= suggestion.fio %></td>
+        <td><%= suggestion.description %></td>
+      </tr>
+        <td><%= link_to 'Просмотр', suggestion %></td>
+        <td><%= link_to 'Редактирование', edit_suggestion_path(suggestion) %></td>
+        <td><%= link_to 'Удалить', suggestion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новое предложение', new_suggestion_path %>

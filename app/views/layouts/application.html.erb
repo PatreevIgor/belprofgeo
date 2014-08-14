@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta charset="utf-8"> 
+<html>
+<head>
+  <title>Профком</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<div class="autent">
+<% if user_signed_in? %>
+  <p>Welcome <%= current_user.email %></p>
+  <%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
+<% else %>
+  <p>You are not signed in.</p>
+  <%= link_to 'Login', new_user_session_path %>
+<% end %>
+
+  <div id="wrap">
+  <div id="header">
+    <div id="logo">
+           <img src="/assets/logo.jpg"  width="300" height="170" />
+    </div>
+    <div class="logo2">
+           <img src="/assets/logo2.gif"  width="570" height="170" />
+    </div>
+  
+  </div>
+  <div id="main">
+  <div id="menus">
+    <div id="mainmenu">
+      <ul>
+        <li class="first" id="active"><a href="/news">Главная</a></li>
+        <li><a href="/usersprofs">Сотрудники</a></li>
+        <li><a href="/protokols">Документы</a></li>
+        <li><a href="/finanses.html">Финансы</a></li>
+        <li><a href="/suggestions.html">Предложения</a></li>
+        <li><a href="/contacts">Контакты</a></li>
+      </ul>
+    </div>
+    <div id="submenu">
+      <ul>
+      <li><center><a href="#" ><span class="green">Официальный сайт ППО УП "Белаэрокосмогеодезия"</a></center></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+
+
+</div>
+  <div id="footer">
+  Сайт изготовлен председателем ППО УП "Белаэрокосмогеодезия" Патреевым И.И.<br />
+  на фреймворке Ruby on Rails<br />
+  Минск 2014 </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

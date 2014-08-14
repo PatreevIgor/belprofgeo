@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Summa:</strong>
+  <%= @finanse.summa %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @finanse.description %>
+</p>
+
+<%= link_to 'Edit', edit_finanse_path(@finanse) %> |
+<%= link_to 'Back', finanses_path %>
