@@ -4,7 +4,9 @@ class UsersprofsController < ApplicationController
   # GET /usersprofs
   # GET /usersprofs.json
   def index
-    @usersprofs = Usersprof.all
+    @usersprofs = Usersprof.all.sort_by {|x| [x.name] }
+    @count_users = 0
+    @usersprofs.each {|i| @count_users+=1}
   end
 
   # GET /usersprofs/1

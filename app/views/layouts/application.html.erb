@@ -13,12 +13,27 @@
 
 <div class="autent">
 <% if user_signed_in? %>
-  <p>Welcome <%= current_user.email %></p>
+  <p>Welcome <%= current_user.name %></p>
   <%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
 <% else %>
   <p>You are not signed in.</p>
   <%= link_to 'Login', new_user_session_path %>
 <% end %>
+
+<% if current_user %>
+  <% if current_user.name == nil %>
+<%= form_for(current_user) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
+ <% end %>
+<% end %>
+
 
   <div id="wrap">
   <div id="header">
@@ -37,7 +52,11 @@
         <li class="first" id="active"><a href="/news">Главная</a></li>
         <li><a href="/usersprofs">Сотрудники</a></li>
         <li><a href="/protokols">Документы</a></li>
+        <% if current_user %>
+            <% if current_user.email =='igormanxxx@yandex.ru' %>
         <li><a href="/finanses.html">Финансы</a></li>
+            <% end %>
+        <% end %>
         <li><a href="/suggestions.html">Предложения</a></li>
         <li><a href="/contacts">Контакты</a></li>
       </ul>

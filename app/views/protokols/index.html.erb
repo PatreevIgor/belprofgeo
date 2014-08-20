@@ -11,21 +11,23 @@
   </thead>
 
   <tbody>
-    <% @protokols.each do |protokol| %>
+    <% @protokols.reverse_each do |protokol| %>
       <tr>
+
         <td><%= protokol.number %></td>
         <td><%= protokol.description %></td>
 
-      </tr>
+      
 
         <% if current_user %>
             <% if current_user.email =='igormanxxx@yandex.ru' or 'esc1951@mail.ru' %>
+                
                 <td><%= link_to 'Просмотр', protokol %></td>
                 <td><%= link_to 'Редактирование', edit_protokol_path(protokol) %></td>
                 <td><%= link_to 'Удалить', protokol, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             <% end %>
         <% end %>
-
+        
     <% end %>
   </tbody>
 </table>

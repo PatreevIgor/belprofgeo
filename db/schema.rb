@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814110106) do
+ActiveRecord::Schema.define(version: 20140820085824) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "comments", force: true do |t|
+    t.string   "name"
+    t.string   "comments"
+    t.integer  "news_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "finanses", force: true do |t|
     t.integer  "summa"
@@ -22,7 +33,7 @@ ActiveRecord::Schema.define(version: 20140814110106) do
 
   create_table "news", force: true do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,8 +69,8 @@ ActiveRecord::Schema.define(version: 20140814110106) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "usersprofs", force: true do |t|
     t.string   "name"

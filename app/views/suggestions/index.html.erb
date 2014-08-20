@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @suggestions.each do |suggestion| %>
+    <% @suggestions.reverse_each do |suggestion| %>
       <tr>
         <td><%= suggestion.fio %></td>
         <td><%= suggestion.description %></td>
