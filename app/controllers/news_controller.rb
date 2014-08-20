@@ -5,6 +5,8 @@ class NewsController < ApplicationController
   # GET /news.json
   def index
     @news = News.all
+    # session[:message] = nil
+    # cookies[:message] = 'hello cooke'
   end
 
   # GET /news/1
@@ -15,10 +17,20 @@ class NewsController < ApplicationController
   # GET /news/new
   def new
     @news = News.new
+    # if session[:message] 
+    #   render text: 'Session messagesssss'
+    # else
+    #   session[:message] = cookies[:message]
+    #   redirect_to move_path
+    # end
   end
 
   # GET /news/1/edit
   def edit
+  end
+
+  def move
+    render text: "#{params[:status]}  #{params[:locale]} Session message #{session[:message]} and #{params[:message]}"
   end
 
   # POST /news

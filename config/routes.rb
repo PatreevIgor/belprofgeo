@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   root 'news#index'
 
+      # get "move" => "news#move", message: "Bla bla bla"#, as: 'move'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
