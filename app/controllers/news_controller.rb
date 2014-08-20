@@ -5,7 +5,6 @@ class NewsController < ApplicationController
   # GET /news.json
   def index
     @news = News.all
-    
     # session[:message] = nil
     # cookies[:message] = 'hello cooke'
   end
