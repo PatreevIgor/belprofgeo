@@ -19,9 +19,10 @@
     <% @usersprofs.each do |usersprof| %>
       <tr>
         <td><%= usersprof.name %></td>
-        <td><%= usersprof.telefon %></td>
+        
 <% if current_user %>
   <% if current_user.email =='igormanxxx@yandex.ru' %>
+        <td><%= usersprof.telefon %></td>
         <td><%= usersprof.kartschet %></td>
         <td><%= link_to 'Show', usersprof %></td>
         <td><%= link_to 'Edit', edit_usersprof_path(usersprof) %></td>
