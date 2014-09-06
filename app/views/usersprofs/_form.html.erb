@@ -23,6 +23,10 @@
     <%= f.label :kartschet %><br>
     <%= f.number_field :kartschet %>
   </div>
+  <div class="field">
+    <%= f.label :date_of_birth %><br>
+    <%= date_field :usersprof, :date_of_birth %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

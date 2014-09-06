@@ -14,6 +14,10 @@ class UsersprofsController < ApplicationController
   def show
   end
 
+  def happyday
+    @usersprofs = Usersprof.all.sort_by {|x| [x.date_of_birth] }
+  end
+
   # GET /usersprofs/new
   def new
     @usersprof = Usersprof.new
@@ -71,6 +75,6 @@ class UsersprofsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usersprof_params
-      params.require(:usersprof).permit(:name, :telefon, :kartschet)
+      params.require(:usersprof).permit(:name, :telefon, :kartschet, :date_of_birth)
     end
 end

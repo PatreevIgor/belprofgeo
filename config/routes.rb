@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/contacts', to: 'contakts#contakts'
-
+  get '/happyday', to: 'usersprofs#happyday'
   resources :usersprofs
 
   resources :suggestions

@@ -1,0 +1,28 @@
+<h1>Happy Days</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>ФИО</th>
+      <th>Дата рождения</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usersprofs.reverse_each do |usersprof| %>
+      <tr>
+        <td><%= usersprof.name %></td>
+        <td><%= usersprof.date_of_birth %></td>
+        <% if current_user %>
+  			<% if current_user.email =='igormanxxx@yandex.ru' %>
+	        <td><%= link_to 'Show', usersprof %></td>
+	        <td><%= link_to 'Edit', edit_usersprof_path(usersprof) %></td>
+	        <td><%= link_to 'Destroy', usersprof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	        <% end %>  
+        <% end %> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>

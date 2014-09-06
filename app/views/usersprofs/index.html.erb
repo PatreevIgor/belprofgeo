@@ -10,8 +10,10 @@
         <% if current_user.email =='igormanxxx@yandex.ru' %>
         <th>Телефон</th>
           <th>Картсчет</th>
+          <th>Дата рождения</th>
          <% end %>  
           <% end %>    
+          
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,6 +27,7 @@
   <% if current_user.email =='igormanxxx@yandex.ru' %>
         <td><%= usersprof.telefon %></td>
         <td><%= usersprof.kartschet %></td>
+        <td><%= usersprof.date_of_birth %></td>
         <td><%= link_to 'Show', usersprof %></td>
         <td><%= link_to 'Edit', edit_usersprof_path(usersprof) %></td>
         <td><%= link_to 'Destroy', usersprof, method: :delete, data: { confirm: 'Are you sure?' } %></td>
