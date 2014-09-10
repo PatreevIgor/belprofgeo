@@ -7,7 +7,7 @@
       <th>ФИО</th>
       
       <% if current_user %>
-        <% if current_user.email =='igormanxxx@yandex.ru' %>
+        <% if current_user.email == admin_email %>
         <th>Телефон</th>
           <th>Картсчет</th>
           <th>Дата рождения</th>
@@ -24,7 +24,7 @@
         <td><%= usersprof.name %></td>
         
 <% if current_user %>
-  <% if current_user.email =='igormanxxx@yandex.ru' %>
+  <% if current_user.email == admin_email %>
         <td><%= usersprof.telefon %></td>
         <td><%= usersprof.kartschet %></td>
         <td><%= usersprof.date_of_birth %></td>
@@ -42,7 +42,7 @@
 
 <br>
 <% if current_user %>
-  <% if current_user.email =='igormanxxx@yandex.ru' %>
+  <% if current_user.email == admin_email %>
 <%= link_to 'New Usersprof', new_usersprof_path %>
   <% end %>  
 <% end %>  

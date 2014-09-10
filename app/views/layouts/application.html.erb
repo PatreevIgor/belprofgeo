@@ -54,13 +54,13 @@
 
         
         <% if current_user %>
-            <% if current_user.email =='igormanxxx@yandex.ru' or 'esc1951@mail.ru' %>
+            <% if current_user.email == admin_email or ohrana_truda_email %>
                 <li><a href="/protokols">Документы</a></li>
             <% end %>
         <% end %>
 
         <% if current_user %>
-            <% if current_user.email =='igormanxxx@yandex.ru' %>
+            <% if current_user.email == admin_email %>
                 <li><a href="/finanses.html">Финансы</a></li>
             <% end %>
         <% end %>
@@ -69,7 +69,7 @@
         <li><a href="/happyday">Дни рождения</a></li>
 
         <% if current_user or current_user == nil %>
-            <% if current_user == nil  or current_user.email !='igormanxxx@yandex.ru' %>
+            <% if current_user == nil  or current_user.email != admin_email %>
               <li><a href="/contacts">Контакты</a></li>
             <% end %>
         <% end %>

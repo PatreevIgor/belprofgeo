@@ -16,7 +16,7 @@
         <td><%= user.email %></td>
         <br>
         <% if current_user %>
-        <% if current_user.email =='igormanxxx@yandex.ru' %>
+        <% if current_user.email == admin_email %>
 
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
@@ -33,4 +33,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+

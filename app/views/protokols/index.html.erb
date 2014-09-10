@@ -18,7 +18,7 @@
         <td><%= protokol.description %></td>
 
         <% if current_user %>
-            <% if current_user.email =='igormanxxx@yandex.ru' or 'esc1951@mail.ru' %>
+            <% if current_user.email == admin_email or ohrana_truda_email %>
                 
                 <td><%= link_to 'Просмотр', protokol %></td>
                 <td><%= link_to 'Редактирование', edit_protokol_path(protokol) %></td>
@@ -32,7 +32,7 @@
 
 <br>
 <% if current_user %>
-    <% if current_user.email =='igormanxxx@yandex.ru' or 'esc1951@mail.ru' %>
+    <% if current_user.email == admin_email or ohrana_truda_email %>
         <%= link_to 'Создать протокол', new_protokol_path %>
     <% end %>
 <% end %>
