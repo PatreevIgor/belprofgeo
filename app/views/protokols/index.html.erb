@@ -17,8 +17,6 @@
         <td><%= protokol.number %></td>
         <td><%= protokol.description %></td>
 
-      
-
         <% if current_user %>
             <% if current_user.email =='igormanxxx@yandex.ru' or 'esc1951@mail.ru' %>
                 
@@ -35,6 +33,6 @@
 <br>
 <% if current_user %>
     <% if current_user.email =='igormanxxx@yandex.ru' or 'esc1951@mail.ru' %>
-<%= link_to 'Создать протокол', new_protokol_path %>
-            <% end %>
-        <% end %>
+        <%= link_to 'Создать протокол', new_protokol_path %>
+    <% end %>
+<% end %>

@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-    <% @usersprofs.reverse_each do |usersprof| %>
+    <% @usersprofs.each do |usersprof| %>
       <tr>
         <td><%= usersprof.name %></td>
         <td><%= usersprof.date_of_birth %></td>

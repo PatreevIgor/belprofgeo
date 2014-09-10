@@ -54,11 +54,17 @@
 
         
         <% if current_user %>
-            <% if current_user.email =='igormanxxx@yandex.ru' %>
-            <li><a href="/protokols">Документы</a></li>
-        <li><a href="/finanses.html">Финансы</a></li>
+            <% if current_user.email =='igormanxxx@yandex.ru' or 'esc1951@mail.ru' %>
+                <li><a href="/protokols">Документы</a></li>
             <% end %>
         <% end %>
+
+        <% if current_user %>
+            <% if current_user.email =='igormanxxx@yandex.ru' %>
+                <li><a href="/finanses.html">Финансы</a></li>
+            <% end %>
+        <% end %>
+
         <li><a href="/suggestions.html">Предложения</a></li>
         <li><a href="/happyday">Дни рождения</a></li>
 
